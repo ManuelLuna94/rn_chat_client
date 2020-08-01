@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-function useInput(defaultValue: string = '', max: number = 20) {
+function useInput(defaultValue: string = "", max: number = 20) {
   const [value, setValue] = useState(defaultValue);
 
   const [charsLeft, setCharsLeft] = useState(max);
