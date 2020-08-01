@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import React, { createContext, useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, ActivityIndicator } from "react-native";
 
 import SignIn from "./views/SignIn";
 
@@ -12,7 +12,9 @@ export default function App() {
   return (
     <MyContext.Provider value={{ username: value, setUsername: setValue }}>
       <View style={styles.container}>
-        <SignIn />
+        {
+          !value ?  <SignIn /> : <ActivityIndicator /> 
+        }
         <StatusBar style="auto" />
       </View>
     </MyContext.Provider>
